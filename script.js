@@ -1,6 +1,6 @@
 // static
 const width = window.screen.width;
-const countApiURL = "https://api.countapi.xyz/hit/drkmusic-player/"
+const countApiURL = "https://api.countapi.xyz/hit/drkmusic-player/";
 
 // redirect desktop user
 if (width >= 1280) {
