@@ -16,29 +16,30 @@ window.onload = async function () {
         (index) => {
 
             const FBody = index.body.replace(/\n/g, '<br><br>')
-
-            let htmlItem = `
-        <div class="re-card">
-            <div class="re-top">
-                <span>${index.name}</span>
-            </div>
-            <div class="re-body">
-                <span id="re-description">${FBody}</span>
-            </div>
-            <div class="re-bottom">
-                <div class="re-bottom-item">
-                    <a href='${index.html_url}'>
-                        <button>visualizar</button>
-                    </a>
+            let htmlItem =
+                `<div class="re-card">
+                <div class="re-top">
+                    <span>${index.name}</span>
                 </div>
-                <div class="re-bottom-item">
-                    <a href='https://github.com/Drkryz/drkryz.github.io/releases/download/${index.tag_name}/music-${index.tag_name}.apk'>
-                        <button>baixar</button>
-                    </a>
+                <div class="re-body">
+                    <span id="re-description">${FBody}</span>
+                </div>
+                <div class="re-bottom">
+                    <div class="re-bottom-item">
+                        <a href='${index.html_url}'>
+                            <button>visualizar</button>
+                        </a>
+                    </div>
+                    <div class="re-bottom-item">
+                        <a href='https://github.com/Drkryz/drkryz.github.io/releases/download/${index.tag_name}/music-${index.tag_name}.apk'>
+                            <button>baixar</button>
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
-        `
+            `
+            
+    
 
             root.innerHTML += htmlItem;
         })
