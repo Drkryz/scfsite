@@ -1,5 +1,4 @@
 const width = window.screen.width;
-// redirect desktop user
 if (width >= 1280) {
     window.location.href = "https://github.com/drkryz"
     
