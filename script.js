@@ -1,67 +1,33 @@
-// static
 const width = window.screen.width;
-
-let gitbase_Releases = "https://api.github.com/repos/Drkryz/drkryz.github.io/releases";
-
 // redirect desktop user
 if (width >= 1280) {
     window.location.href = "https://github.com/drkryz"
     
 }
 
+let base = "https://api.github.com/repos/Drkryz/drkryz.github.io/releases";
 
+window.onload = function() {
 
-window.onload = async function() {
-    let releases = await getReleases();
-    console.log(releases);
-    
-    
-    document.getElementById("version-tag").textContent=releases[0].tag_name;
-    document.getElementById("version-url").setAttribute("href", releases[0].assets[0].browser_download_url);
+  fetch(base).then(res => res.json()).then(data => {
+    console.log(data);
+    document.getElementById("link").setAttribute("href", data[0].assets[0].browser_download_url)
+  });
 }
 
-async function getReleases() {
-    const data = await fetch(gitbase_Releases);
-    const res = await data.json();
+let isOpen = false;
+function OpenSide() {
+    if (isOpen) {
+      $("#sidebar").css("animation-name", "s-closing");
 
-    return res;
-}
-
-
-function LinkTo(link)
-{
-    switch(link) {
-        case "github":
-            window.location.href = "https://github.com/drpidman";
-        break;
-        case "discord":
-            window.location.href = "https://discord.com/invite/kmAuPQ6qNE";
-        break;
-        case "website":
-            window.location.href = "https://drkryz.xyz";
-        break;          
-    }
-    
-}
-
-let visible = false;
-
-function OpenSide()
-{
-    const sideBar = document.getElementById("sidebar");
-    if (visible) {
-        sideBar.style.visibility = "hidden"
-        visible = false;
+      setTimeout(() => {
+        $("#sidebar").css("display", "none");
+        isOpen = false;
+      }, 500);
     } else {
-        sideBar.style.visibility = "visible";
-        visible = true;
+      $("#sidebar").css("animation-name", "s-opening");
+      $("#sidebar").show();
+
+      isOpen = true;
     }
-}
-
-function CloseSide()
-{
-    const sideBar = document.getElementById("sidebar");
-
-    if (visible) sideBar.style.visibility = "hidden";
-    visible = false;
 }

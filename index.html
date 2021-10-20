@@ -1,122 +1,92 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="shortcut icon" href="./icons/logo.png" type="image/x-icon" />
-  <link rel="stylesheet" href="style.css" type="text/css" />
-
-<script data-ad-client="ca-pub-2203772771295704" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-1JVVWS81N8"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-1JVVWS81N8');
-</script>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/js/all.min.js"
-    integrity="sha512-cyAbuGborsD25bhT/uz++wPqrh5cqPh1ULJz4NSpN9ktWcA6Hnh9g+CWKeNx2R0fgQt+ybRXdabSBgYXkQTTmA=="
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <title>Music Player</title>
+  <title>Drkryz - Music Player</title>
 </head>
 
 <body>
-  <header class="header">
-    <div class="header item">
+  <nav class="navbar">
+    <div class="item">
       <a onclick="OpenSide()">
-        <i style="color: white;" class="fas fa-bars"></i>
+        <i class="fas fa-bars"></i>
       </a>
     </div>
-    <div class="header item">
-      <span style="
-          color: #5865f2;
-          font-weight: bold;
-          font-family: 'Trebuchet MS',
-          'Lucida Sans Unicode',
-          'Lucida Grande',
-          'Lucida Sans',
-          Arial,
-          sans-serif;
-          font-size: 1.1rem;
-          text-align: center;
-          ">Music Player</span>
-    </div>
-    <div class="header item">
+    <div class="item">
       <img src="./icons/logo.png" style="width: 2rem;">
     </div>
-  </header>
-  <div class="side-bar" id="sidebar">
-    <div class="items side-top">
-      <a onclick="CloseSide()">&times;</a>
+    <div class="side" id="sidebar">
+      <div class="top">
+        <a onclick="OpenSide()">&times;</a>
+      </div>
+      <div class="bottop">
+        <ul>
+          <li>
+            <a href="https://drkryz.xyz">
+              Projeto
+            </a>
+          </li>
+          <li>
+            <a href="https://app.drkryz.xyz/releases">
+              Versões
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/drkryz">
+              GitHub
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
-    <div class="items side-body">
-      <ul>
-        <li>
-          <a onclick="LinkTo('discord')">Discord</a>
-        </li>
-        <li>
-          <a onclick="LinkTo('github')">Github</a>
-        </li>
-        <li>
-          <a href="./releases">Versões</a>
-        </li>
-        <li>
-          <a href="https://drkryz.xyz">Página Projeto</a>
-        </li>
-      </ul>
+  </nav>
+  <div class="content-main">
+    <div class="content-item" style="text-align: end;">
+      <h1>Drkryz Player</h1>
     </div>
-  </div>
-  <div class="bottom-of-header">
-    <div class="content">
-      <main>
-        <h2 style="text-align: center">
-          Reprodutor de Música moderno para Android.
-        </h2>
-        <h4 style="
-              text-align: center;
-              color: darkgray;
-              font-weight: 400;
-              margin: 0.3rem;
-            ">
-          Interface simples e limpa, apenas com o necessário para reproduzir
-          suas músicas rapidamente.
-        </h4>
-        <div class="align-center">
-          <a id="version-url"
-            href="https://github.com/Drkryz/drkryz.github.io/releases/download/1.11.250/music-1.11.250.apk">
-            <button id="styled-btn">
-              BAIXE AGORA
-              <br>
-              <span id="version-tag">1.11.250</span>
-            </button>
-          </a>
-        </div>
-      </main>
+    <div class="content-item" style="text-align: start">
+      <h5 style="font-size: 20px; margin: 0.5rem;">Reprodutor de Música simples e moderno para Android</h5>
+      <span>Interface simples e limpa, apenas com o necessário para reproduzir suas músicas rapidamente.</span>
+    </div>
+    <div class="content-item" style="text-align: start">
+      <span>O aplicativo ainda está em desenvolvimento e pode apresentar bugs que interfiram na experiência do usuário.</span>
+    </div>
+    <div class="content-item" style="flex-direction: row;">
+      <a id="link">
+        <button>baixar</button>
+      </a>
     </div>
   </div>
-  <div class="contributes">
-    <div class="card" onclick="LinkTo('github')">
-      <i class="fab fa-github" style="color: #060606"></i>
-      <span>GITHUB</span>
+  <div class="content-main" style="
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  margin-left: 0;
+  border-top-right-radius: 100rem;
+  border-bottom-right-radius: 100rem;
+  margin-right: 0.5rem;
+  ">
+    <div class="content-item">
+      <h1>Privacidade</h1>
     </div>
-    <div class="card" onclick="LinkTo('discord')">
-      <i class="fab fa-discord" style="color: #5865f2"></i>
-      <span>DISCORD</span>
+    <div class="content-item">
+      <h5 style="font-size: 20px; margin: 0.5rem;">Apenas o necessário</h5>
+      <span>Coletamos apenas dados sobre o uso do aplicativo, performance e erros para melhorar a experiência do usuário.</span>
+    </div>
+    <div class="content-item" style="padding: 1rem;">
+      <span>Acesso apenas a arquivos de mídia do armazenamento externo e interno e com atualizações constantes para manter o aplicativo seguro.</span>
     </div>
   </div>
-  <div class="contributes">
-    <div class="card" onclick="LinkTo('website')">
-      <i class="fas fa-globe" style="color: #fff"></i>
-      <span>WEBSITE</span>
-    </div>
-  </div>
-  <script src="script.js"></script>
-  <script async src="https://api.countapi.xyz/hit/app.drkryz.xyz/visits?callback=getVisitors"></script>
+  <script src="./script.js"></script>
 </body>
 
 </html>

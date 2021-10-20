@@ -1,198 +1,159 @@
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
-@import url("./fonts/YanoneKaffeesatz-SemiBold.ttf");
+/**simplify**/
+@font-face {
+    font-family: YanoneKaffeesatz;
+    src: url('./fonts/YanoneKaffeesatz-SemiBold.ttf');
+}
 
 * {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 body {
-  background: #222;
-  margin: 0;
+    background-color: #222;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-header {
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.274);
+html {
+    scroll-behavior: smooth;
 }
 
-.header {
-  display: flex;
-  padding: 0.5rem !important;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  border-radius: 0.4rem;
-  margin: 0.5rem;
+.navbar {
+    margin: 0.5rem;
+    padding: 0.5rem;
+    display: flex;
+    background-color: #333;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 1rem;
+    box-shadow: -1px -1px 20px rgba(0, 0, 0, 0.507);
 }
 
-.header.item {
-  display: flex;
-  align-content: center;
-  align-items: center;
-  border: none;
-  justify-content: center;
-  padding: 0.5rem;
+.navbar .item {
+    padding: 0.5rem;
+    margin: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
 }
 
-.header.item .links {
-  padding: 1rem;
-  color: #fff;
+.navbar .item a {
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.header.item .links a {
-  padding: 0.5rem;
-  margin: 0.5rem;
+.navbar .side {
+    position: absolute;
+    width: 60%;
+    background-color: #333;
+    box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.76);
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    display: none;
+    flex-direction: column;
+    top: 0.6rem;
+    left: 0.6rem;
+    animation-fill-mode: forwards;
+    animation-name: s-opening;
+    animation-duration: 500ms;
 }
 
-.header.item .links a button {
-  padding: 1rem;
-  border: none;
-  outline: none;
-  border-radius: 0.5rem;
-  font-weight: lighter;
-  transition-duration: 400ms;
+@keyframes s-opening {
+    from {
+        left: -50rem;
+    }
+
+    to {
+        width: 60%;
+        left: 0.6rem;
+    }
 }
 
-@media screen and (max-width: 720px) {
-  .header.item .links a button {
-    font-weight: 500;
-  }
+@keyframes s-closing {
+    from {
+        left: 0.6rem;
+        width: 60%;
+    }
+
+    to {
+        left: -50rem;
+    }
 }
 
-.header.item .links a button:hover {
-  transition-duration: 400ms;
-  border-radius: 0.1rem;
-  color: rgb(49, 104, 255);
-  box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.342);
+.navbar .side .top {
+    width:auto;
+    padding: 0.5rem;
+    color: white;
+    font-size: 25px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.navbar .side .bottop {
+    display: flex;
+    padding: 0.5rem;
+    color: white;
+}
+
+.navbar .side .bottop ul {
+    list-style: none;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.navbar .side .bottop ul li {
+    margin: 0.5rem;
+    text-align: center;
+}
+
+.navbar .side .bottop ul li a {
+    text-align: center;
+    color: white;
+    text-decoration: none;
+}
+
+.navbar .side .bottop ul li a:hover {
+    color: rgb(127, 146, 250);
+}
+
+.content-main {
+    background-color: rgb(113, 88, 252);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    color: rgb(221, 221, 221);
+    justify-content: center;
+    box-shadow: 2px 2px 20px rgba(51, 28, 255, 0.76);
+    border-bottom-left-radius: 250rem;
+    border-top-left-radius: 250rem;
+    margin-left: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.content-main .content-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0.5rem;
+    margin: 0.5rem;
 }
 
 
-
-.side-bar {
-  width: 60%;
-  height: auto;
-  background-color: #222;
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border-radius: 0.5rem;
-  padding: 0.5rem;
-  visibility: hidden;
-  top: 10px;
-  left: 10px;
-  box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.363);
-}
-
-.side-bar .items.side-top {
-  display: flex;
-  width: 100%;
-  color: white;
-  justify-content: flex-end;
-}
-
-.side-bar .items.side-body {
-  height: auto;
-  width: 100%;
-  margin: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.side-bar .items.side-body ul {
-  width: 100%;
-  list-style: none;
-  justify-content: center;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  color: white;
-  font-family: "Yanone Kaffeesatz";
-}
-
-.side-bar .items.side-body ul li {
-  border-radius: 0.3rem;
-  margin: 5px;
-  padding: 10px;
-}
-
-.side-bar .items.side-body ul li a {
-  text-decoration: none;
-  color: white;
-}
-
-.bottom-of-header {
-  background-color: #222;
-  border-bottom-right-radius: 1rem;
-  border-bottom-left-radius: 1rem;
-  box-shadow: 1px 6.6px 6.6px rgba(0, 0, 0, 0.26);
-}
-
-.bottom-of-header .content {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  padding: 1.5rem;
-}
-
-.bottom-of-header .content main {
-  color: #fcfcfc;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  font-family: "Yanone Kaffeesatz";
-  padding: 0.5rem;
-}
-
-.bottom-of-header .content main .align-center {
-  display: flex;
-  justify-content: center;
-  padding: 0.5rem;
-}
-
-#styled-btn {
-  margin: 5px;
-  border: none;
-  padding: 0.9rem;
-  border-radius: 5rem;
-  transition-duration: 500ms;
-}
-
-#styled-btn:hover {
-  transition-duration: 500ms;
-  color: rgb(49, 104, 255);
-  box-shadow: 1px 5px 6.6px rgba(0, 0, 0, 0.219);
-}
-
-.contributes {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  padding: 0.5rem;
-}
-
-.contributes .card {
-  margin: 0.5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: #222;
-
-  border-radius: 20px;
-  padding: 2rem;
-
-  box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.363);
-}
-
-.contributes .card svg {
-  font-size: 60px;
-  margin: 0.5rem;
-}
-
-.contributes .card span {
-  color: darkgray;
-  font-family: "Yanone Kaffeesatz";
-  font-weight: bold;
+.content-main .content-item a button {
+    padding: 0.5rem;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin: 0.5rem;
+    border: none;
+    outline: none;
+    border-radius: 0.5rem;
+    font-size: 17px;
+    
+    color: white;
+    background-color: rgb(62, 49, 250);
 }
