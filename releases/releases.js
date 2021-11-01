@@ -1,53 +1,49 @@
-let gitbase_Releases = "https://api.github.com/repos/Drkryz/drkryz.github.io/releases";
+let gitReleasesUrl = "https://api.github.com/repos/Drkryz/drkryz.github.io/releases";
 
 
-window.onload = async function () {
-
-    const root = document.getElementById("releases-i");
-
-    const Items = await getReleases();
-    console.log(Items[0]);
 
 
-    Items.map(
-        /** 
-         * @param {{ name: string, body: string, html_url: string, tag_name: string }} index - fetched items
-         */
-        (index) => {
+async function load() {
+    const root = document.getElementById("releases-card");
+    const releases = await getReleases();
+    console.log(releases);
 
-            const FBody = index.body.replace(/\n/g, '<br><br>')
-            let htmlItem =
-                `<div class="re-card">
-                <div class="re-top">
-                    <span>${index.name}</span>
-                </div>
-                <div class="re-body">
-                    <span id="re-description">${FBody}</span>
-                </div>
-                <div class="re-bottom">
-                    <div class="re-bottom-item">
-                        <a href='${index.html_url}'>
-                            <button>visualizar</button>
-                        </a>
-                    </div>
-                    <div class="re-bottom-item">
-                        <a href='https://github.com/Drkryz/drkryz.github.io/releases/download/${index.tag_name}/music-${index.tag_name}.apk'>
-                            <button>baixar</button>
-                        </a>
-                    </div>
-                </div>
+    releases.map(release => {
+        let htmlTemplate = `
+        <div class="card">
+            <div class="card-top">
+                <h1>${release.name}</h1>
             </div>
-            `
-            
-    
+            <div class="card-body">
+                <span>${release.body}</span>
+            </div>
+            <div class="card-bottom">
+                <a class="link-button" href=${release.assets[0].browser_download_url}>
+                    <i class="fas fa-download"></i>
+                    <span>Download</span>
+                </a>
+                <a class="link-button" href=${release.html_url}>
+                    <i class="fas fa-info-circle"></i>
+                    <span>Informações</span>
+                </a>
+            </div>
+        </div>
+        `;
 
-            root.innerHTML += htmlItem;
-        })
+
+        root.innerHTML += htmlTemplate;
+    });
+
 }
+
+window.addEventListener ?
+    window.addEventListener("load", load, false) :
+    window.attachEvent && window.attachEvent("onload", load);
 
 async function getReleases() {
-    const data = await fetch(gitbase_Releases);
-    const res = await data.json();
-
-    return res;
+    const data = await fetch(gitReleasesUrl);
+    const json = await data.json();
+    return json;
 }
+
+console.log(getReleases());
