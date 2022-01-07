@@ -10,7 +10,7 @@
 }
 
 body {
-    background-color: #222;
+    background-color: #fff;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
@@ -19,13 +19,12 @@ html {
 }
 
 .navbar {
-    margin: 0.5rem;
+    margin: 0.0rem;
     padding: 0.5rem;
     display: flex;
-    background-color: #333;
+    background-color: #fff;
     align-items: center;
     justify-content: space-between;
-    border-radius: 1rem;
     box-shadow: -1px -1px 20px rgba(0, 0, 0, 0.507);
 }
 
@@ -35,7 +34,7 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
+    color:darkgrey;
 }
 
 .navbar .item a {
@@ -48,7 +47,7 @@ html {
 .navbar .side {
     position: absolute;
     width: 60%;
-    background-color: #333;
+    background-color: #fff;
     box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.76);
     border-radius: 0.5rem;
     padding: 0.5rem;
@@ -86,7 +85,7 @@ html {
 .navbar .side .top {
     width:auto;
     padding: 0.5rem;
-    color: white;
+    color: darkgray;
     font-size: 25px;
     display: flex;
     justify-content: flex-end;
@@ -95,7 +94,7 @@ html {
 .navbar .side .bottop {
     display: flex;
     padding: 0.5rem;
-    color: white;
+    color: darkgray;
 }
 
 .navbar .side .bottop ul {
@@ -113,7 +112,7 @@ html {
 
 .navbar .side .bottop ul li a {
     text-align: center;
-    color: white;
+    color:darkgray;
     text-decoration: none;
 }
 
@@ -121,55 +120,66 @@ html {
     color: rgb(127, 146, 250);
 }
 
-.content-main {
-    background-color: rgb(113, 88, 252);
-    padding: 1rem;
+.center {
+    width: auto;
+    height: auto;
     display: flex;
     flex-direction: column;
-    color: rgb(221, 221, 221);
-    justify-content: center;
-    box-shadow: 2px 2px 20px rgba(51, 28, 255, 0.76);
-    border-bottom-left-radius: 250rem;
-    border-top-left-radius: 250rem;
-    margin-left: 0.5rem;
-    margin-top: 0.5rem;
+    background-color: #fff;
 }
 
-.content-main .content-item {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 0.5rem;
-    margin: 0.5rem;
-}
-
-
-.content-main .content-item a button {
-    padding: 0.5rem;
-    padding-left: 30px;
-    padding-right: 30px;
-    margin: 0.5rem;
-    border: none;
-    outline: none;
-    border-radius: 0.5rem;
-    font-size: 17px;
-    
-    color: white;
-    background-color: rgb(62, 49, 250);
-}
-
-
-.float-header {
-    position: fixed;
-    top: 0;
-    left: 0;
+.center .support-img img {
     width: 100%;
-    height: 50px;
-    background-color: #333;
-    z-index: 1;
+    height: auto;
+}
+
+.center .support-img {
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.center .support-download-button {
+    width: auto;
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: -1px -1px 20px rgba(0, 0, 0, 0.507);
+    background-color: #fff;
+    padding: 0.5rem;
 }
 
+.center .support-download-button a{
+    text-decoration: none;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: rgb(127, 146, 250);
+}
+
+.center .support-download-button a button {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    padding: 0.5rem;
+    font-size: 25px;
+    font-family: 'YanoneKaffeesatz', monospace;
+}
+
+.center .support-cards-demo-view {
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    padding: 0.5rem;
+}
+
+.center .support-cards-demo-view img {
+    width: 45%;
+    border-radius: 20px;
+    margin: 10px;
+    box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.76);
+}

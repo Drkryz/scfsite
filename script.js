@@ -8,6 +8,7 @@ if (width >= 1280) {
 let base = "https://api.github.com/repos/Drkryz/drkryz.github.io/releases";
 
 window.onload = function() {
+  console.log("loaded")
 
   fetch(base).then(res => res.json()).then(data => {
     document.getElementById("link").setAttribute("href", data[0].assets[0].browser_download_url)
@@ -29,12 +30,4 @@ function OpenSide() {
 
       isOpen = true;
     }
-}
-
-window.onload = function() {
-  console.log(window.location.hash.slice(1))
-
-  const fragment = new URLSearchParams(window.location.hash.slice(1));
-  const [accessToken, tokenType] = [fragment.get('access_token'), fragment.get('token_type')];
-
 }
