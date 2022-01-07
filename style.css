@@ -183,3 +183,69 @@ html {
     margin: 10px;
     box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.76);
 }
+
+.footer {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    padding: 0.5rem;
+
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-top-color: rgb(174, 186, 252);
+}
+
+.footer-icons {
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #fff;
+    padding: 0.5rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: bold;
+    justify-content: space-between;
+}
+
+.footer-icons .cprght {
+    width: 100%;
+    margin: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+}
+
+.footer-icons .social {
+    width: auto;
+    margin: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-icons .social .item {
+    width: auto;
+    margin: 0.3rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+}
+
+.footer-icons .social .item a {
+    text-decoration: none;
+    color: darkgray;
+    outline: none;
+}
+
+a {
+    text-decoration: none;
+}
