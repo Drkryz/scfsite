@@ -4,6 +4,12 @@
     src: url('./fonts/YanoneKaffeesatz-SemiBold.ttf');
 }
 
+@font-face {
+    font-family: varella;
+    src: url('./fonts/varela.ttf');
+}
+
+
 * {
     margin: 0;
     box-sizing: border-box;
@@ -25,7 +31,6 @@ html {
     background-color: #fff;
     align-items: center;
     justify-content: space-between;
-    box-shadow: -1px -1px 20px rgba(0, 0, 0, 0.507);
 }
 
 .navbar .item {
@@ -35,6 +40,7 @@ html {
     justify-content: center;
     align-items: center;
     color:darkgrey;
+    font-family: 'varella';
 }
 
 .navbar .item a {
@@ -58,6 +64,8 @@ html {
     animation-fill-mode: forwards;
     animation-name: s-opening;
     animation-duration: 500ms;
+
+    font-family: 'varella';
 }
 
 @keyframes s-opening {
@@ -115,6 +123,7 @@ html {
 .navbar .side .bottop ul li a {
     text-align: center;
     color:darkgray;
+    font-family: 'varella';
     text-decoration: none;
 }
 
@@ -165,8 +174,9 @@ html {
     outline: none;
     background-color: transparent;
     padding: 0.5rem;
-    font-size: 25px;
-    font-family: 'YanoneKaffeesatz', monospace;
+    font-size: 20px;
+    font-family: 'varella';
+    font-weight: bold;
 }
 
 .center .support-download-button img {
@@ -200,10 +210,6 @@ html {
     flex-direction: column;
     background-color: #fff;
     padding: 0.5rem;
-
-    border-top-width: 1px;
-    border-top-style: solid;
-    border-top-color: rgb(174, 186, 252);
 }
 
 .footer-icons {
@@ -214,7 +220,7 @@ html {
     align-items: center;
     background-color: #fff;
     padding: 0.5rem;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'varella';
     font-size: 10px;
     font-style: normal;
     font-weight: bold;
